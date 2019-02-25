@@ -14,6 +14,7 @@
 Route::get('/', function () {
     
     $tasks = DB::table('tasks')->get();
+    //dd($tasks);
     $name = "world";
     //return $tasks;
     return view('welcome', compact('name', 'tasks'));
@@ -31,4 +32,18 @@ Route::get('/', function () {
     $name = "World"
     return view('welcome').compact('name');
     */
+});
+
+Route::get('/tasks', function(){
+    $tasks = DB::table('tasks')->get();
+    //dd($tasks);
+    $title = "Show Tasks";
+    //return $tasks;
+    return view('tasks.index', compact('title', 'tasks'));
+});
+
+Route::get('/tasks/show/{task}', function($id){
+    $task = DB::table('tasks')->find($id);
+    $title = "Show Task";
+    return view('tasks.show', compact('title', 'task'));
 });
