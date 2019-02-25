@@ -13,12 +13,9 @@
 
 Route::get('/', function () {
     
-    $tasks = [
-        'go to the store',
-        'finish', 
-        'welcome'
-    ];
+    $tasks = DB::table('tasks')->get();
     $name = "world";
+    //return $tasks;
     return view('welcome', compact('name', 'tasks'));
 
     

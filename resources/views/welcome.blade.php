@@ -11,18 +11,11 @@
 <body>
 <h1>HEllO <?php echo $name ?></h1>
     <ul>
-    <!-- 
-        <?php foreach($tasks as $task): ?>
-        <li><?= $task; ?> </li>
-    <?php endforeach;?> 
-    -->
-    <!-- using blade template -->
-<!--     
     @foreach($tasks as $task)
-        <li>{{ $task }}</li>
-        @endforeach
-     -->
-    
+    <li>{{$task['body']}}</li>
+    @endforeach
     </ul>
+    
+    
 </body>
 </html>
