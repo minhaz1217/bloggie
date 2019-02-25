@@ -12,5 +12,26 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    
+    $tasks = [
+        'go to the store',
+        'finish', 
+        'welcome'
+    ];
+    $name = "world";
+    return view('welcome', compact('name', 'tasks'));
+
+    
+    // 3rd option
+    // $name = "World 2";
+    // return view('welcome', compact('name'));
+
+    // return view('welcome',[
+    //     'name'=> "World"
+    // ]);
+/*
+    return view('welcome')=>with('name', 'world');
+    $name = "World"
+    return view('welcome').compact('name');
+    */
 });
