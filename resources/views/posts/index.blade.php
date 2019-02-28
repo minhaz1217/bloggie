@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.master')
 
 
 @section('content')
@@ -39,8 +39,5 @@
     </nav>
 
 </div><!-- /.blog-main -->
-
-
-
 
 @endsection
