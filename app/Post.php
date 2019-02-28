@@ -8,9 +8,17 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
     public function addComment($body){
-        \App\Comment::create([
-            'body'=>$body,
-            'post_id' =>$this->id
-        ]);
+        // 3rd way
+
+        $this->comments()->create(['body'=>$body]);
+        
+        // 4th way
+        //$this->comments()->create(compact('body'));
+        
+        // 2nd way
+        // \App\Comment::create([
+        //     'body'=>$body,
+        //     'post_id' =>$this->id
+        // ]);
     }
 }

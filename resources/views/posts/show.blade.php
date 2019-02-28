@@ -30,6 +30,7 @@
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Add Comment</button>
                     </div>
+                    @include('posts.errors')
                 </form>
             </div>
         </div>

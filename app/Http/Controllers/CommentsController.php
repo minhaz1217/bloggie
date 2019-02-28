@@ -9,6 +9,7 @@ class CommentsController extends Controller
     //
 
     public function store(\App\Post $post){
+        $this->validate(request(), ['body' => 'required|min:2'] );
 
         $post->addComment(request('body'));
         // \App\Comment::create([
