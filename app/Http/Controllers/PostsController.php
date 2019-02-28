@@ -25,7 +25,7 @@ class PostsController extends Controller
         
         $this->validate(request(), [
             'title' => 'required', 
-            'myBody' => 'required'
+            'postBody' => 'required'
         ]);
         \App\Post::create([
             'title' => request('title'),
