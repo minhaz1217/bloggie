@@ -8,11 +8,13 @@ class PostsController extends Controller
 {
     
     public function index(){
-        return view('posts.index');
+        $posts = \App\Post::all();
+        return view('posts.index',compact('posts'));
     }
     
-    public function show($id){
-        return view('posts.show');
+    public function show(\App\Post $post){
+        //$post = \App\Post::find($post);
+        return view('posts.show',compact('post'));
     }
     public function create(){
 
