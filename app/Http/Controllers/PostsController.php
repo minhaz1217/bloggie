@@ -15,10 +15,22 @@ class PostsController extends Controller
         return view('posts.show');
     }
     public function create(){
+
         return view('posts.create');
     }
     public function store(){
-        dd(request()->all());
+        
+        $this->validate(request(), [
+            'title' => 'required', 
+            'myBody' => 'required'
+        ]);
+        \App\Post::create([
+            'title' => request('title'),
+            'body' => request('postBody')
+        ]); 
+
+
+        return redirect('/');
         //return view('posts.create');
     }
 
