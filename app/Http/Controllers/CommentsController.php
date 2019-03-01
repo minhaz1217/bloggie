@@ -11,11 +11,12 @@ class CommentsController extends Controller
     public function store(\App\Post $post){
         $this->validate(request(), ['body' => 'required|min:2'] );
 
-        $post->addComment(request('body'), auth()->user()->id);
-        // \App\Comment::create([
-        //     'body' => request('body'),
-        //     'post_id' => $post->id
-        // ]);
+        //$post->addComment(request('body'), auth()->user()->id);
+        \App\Comment::create([
+            'body' => request('body'),
+            'post_id' => $post->id,
+            'user_id' => auth()->user()->id
+        ]);
         return back();
     }
 }
