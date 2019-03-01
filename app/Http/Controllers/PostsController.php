@@ -16,7 +16,7 @@ class PostsController extends Controller
             ->filter(request(['month', 'year']))
             ->get();
 
-
+        // moved to Post->scopeFilter()
         // if($month = request('month')){
         //         $posts->whereMonth('created_at', \Carbon\Carbon::parse($month)->month);
         // }
@@ -26,12 +26,15 @@ class PostsController extends Controller
         // $posts = $posts->get();
 
 
-
-        $archives = \App\Post::selectRaw('year(created_at) year , monthname(created_at) month, count(*) published')
-        ->groupBy('year', 'month')
-        ->orderByRaw('min(created_at) desc')
-        ->get()
-        ->toArray();
+        
+        $archives = \App\Post::archive();
+        
+        // moved to Post->archive()
+        // $archives = \App\Post::selectRaw('year(created_at) year , monthname(created_at) month, count(*) published')
+        // ->groupBy('year', 'month')
+        // ->orderByRaw('min(created_at) desc')
+        // ->get()
+        // ->toArray();
        
         //dd($archives);
         

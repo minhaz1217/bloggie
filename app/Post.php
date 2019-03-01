@@ -38,4 +38,12 @@ class Post extends Model
         }
         //return $query;
     }
+    public static function archive(){
+        return static::selectRaw('year(created_at) year , monthname(created_at) month, count(*) published')
+        ->groupBy('year', 'month')
+        ->orderByRaw('min(created_at) desc')
+        ->get()
+        ->toArray();
+       
+    }
 }
