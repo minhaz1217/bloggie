@@ -124,3 +124,9 @@
     margin-bottom: 0;
   }
   
+  #flash_message{
+    position: absolute;
+    right:20px;
+    bottom:20px;
+    z-index:10;
+  }

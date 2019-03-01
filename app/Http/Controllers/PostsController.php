@@ -60,7 +60,7 @@ class PostsController extends Controller
             'body' => request('postBody'),
             'user_id' => auth()->user()->id
         ]); 
-
+        session()->flash('message', "Your post has been published.");
 
         return redirect('/');
         //return view('posts.create');

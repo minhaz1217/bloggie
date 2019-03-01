@@ -42,6 +42,11 @@
 <body>
     <div class="container">
         @include('layouts.nav')
+        @if(session('message'))
+        <div class="alert alert-success" role="alert" id="flash_message">
+            {{ session('message') }}
+        </div>
+        @endif
         <main role="main" class="container">
             <div class="row">
                 @yield('content')
