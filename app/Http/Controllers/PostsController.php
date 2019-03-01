@@ -11,8 +11,19 @@ class PostsController extends Controller
     }
     public function index(){
         //$posts = \App\Post::latest()->get();
-        $posts = \App\Post::orderBy('created_at', 'desc')->get();
-        
+        //$posts = \App\Post::orderBy('created_at', 'desc')->get();
+        $posts = \App\Post::latest();
+
+        if($month = request('month')){
+                $posts->whereMonth('created_at', \Carbon\Carbon::parse($month)->month);
+        }
+        if($year = request('year')){
+            $posts->whereYear('created_at', $year);
+        }
+        $posts = $posts->get();
+
+
+
         $archives = \App\Post::selectRaw('year(created_at) year , monthname(created_at) month, count(*) published')
         ->groupBy('year', 'month')
         ->orderByRaw('min(created_at) desc')
