@@ -26,8 +26,8 @@ class PostsController extends Controller
         // $posts = $posts->get();
 
 
-        
-        $archives = \App\Post::archive();
+        //added it through appServiceProvider
+        //$archives = \App\Post::archive();
         
         // moved to Post->archive()
         // $archives = \App\Post::selectRaw('year(created_at) year , monthname(created_at) month, count(*) published')
@@ -38,7 +38,7 @@ class PostsController extends Controller
        
         //dd($archives);
         
-        return view('posts.index',compact('posts', 'archives'));
+        return view('posts.index',compact('posts'));
     }
     
     public function show(\App\Post $post){
