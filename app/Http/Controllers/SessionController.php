@@ -18,7 +18,7 @@ class SessionController extends Controller
         //dd(request(['email', 'password']));
         $user = \App\User::where(['email'=>request('email'), 'password' => request('password')])->first();
         //dd( $user );
-        auth()->attempt(request(['email', 'password']));
+        // auth()->attempt(request(['email', 'password']));
         if(! $user){
             return back()->withErrors([
                 'message' => 'Please Check your Credentials'
