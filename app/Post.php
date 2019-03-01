@@ -26,4 +26,16 @@ class Post extends Model
         //     'post_id' =>$this->id
         // ]);
     }
+    public function scopeFilter($query, $filters){
+        //dd($filters['year']);
+        if(isset($filters['month'])){
+            $month = $filters['month'];
+            $query->whereMonth('created_at', \Carbon\Carbon::parse($month)->month);
+        }
+        if(isset($filters['year'])){
+            $year = $filters['year'];
+            $query->whereYear('created_at', $year);
+        }
+        //return $query;
+    }
 }

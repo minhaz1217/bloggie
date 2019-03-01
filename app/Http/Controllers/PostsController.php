@@ -12,15 +12,18 @@ class PostsController extends Controller
     public function index(){
         //$posts = \App\Post::latest()->get();
         //$posts = \App\Post::orderBy('created_at', 'desc')->get();
-        $posts = \App\Post::latest();
+        $posts = \App\Post::latest()
+            ->filter(request(['month', 'year']))
+            ->get();
 
-        if($month = request('month')){
-                $posts->whereMonth('created_at', \Carbon\Carbon::parse($month)->month);
-        }
-        if($year = request('year')){
-            $posts->whereYear('created_at', $year);
-        }
-        $posts = $posts->get();
+
+        // if($month = request('month')){
+        //         $posts->whereMonth('created_at', \Carbon\Carbon::parse($month)->month);
+        // }
+        // if($year = request('year')){
+        //     $posts->whereYear('created_at', $year);
+        // }
+        // $posts = $posts->get();
 
 
 
