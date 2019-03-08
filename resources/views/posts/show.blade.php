@@ -3,7 +3,13 @@
 <div class="col-md-8 blog-main">
     <div class="blog-post">
         <h2 class="blog-post-title">{{$post->title}}</h2>
-
+        @if(count($post->tags))
+        <ul>
+            @foreach($post->tags as $tag)
+            <li><a href="/posts/tag/{{$tag->name}}">{{$tag->name}}</a> </li>
+            @endforeach
+        </ul>
+        @endif
         <p class="blog-post-meta">{{ $post->created_at->toFormattedDateString() }} by <a href="#">Mark</a></p>
 
         <p>{{ $post->body }}</p>

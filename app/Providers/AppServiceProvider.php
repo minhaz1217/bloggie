@@ -18,7 +18,11 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         view()->composer('layouts.sidebar', function($view){
             $view->with('archives', \App\Post::archive());
+            // $view->with('tags', \App\Tag::pluck("name")); // gets all the tags 
+            $view->with('tags', \App\Tag::has("posts")->pluck("name")); // gets all the tags that has posts associated with them 
         });
+
+
     }
 
     /**

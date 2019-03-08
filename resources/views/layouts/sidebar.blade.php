@@ -18,6 +18,17 @@
                 </div>
 
                 <div class="p-4">
+                    <h4 class="font-italic">Tags</h4>
+                    <ul class='list-unstyled mb-0'>
+                    @foreach($tags as $tag)
+                    <li>
+                        <a href="/posts/tag/{{$tag}}">{{$tag}}</a>
+                    </li>
+                    @endforeach
+                    </ul>
+                    
+                </div>
+                <div class="p-4">
                     <h4 class="font-italic">Elsewhere</h4>
                     <ol class="list-unstyled">
                         <li><a href="#">GitHub</a></li>
