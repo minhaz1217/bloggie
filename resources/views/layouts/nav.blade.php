@@ -16,9 +16,10 @@
                             <path d="M21 21l-5.2-5.2" />
                         </svg>
                     </a> -->
-                    @if(Auth::check())
+                @if(Auth::check())
                 <h2 class="p-2 text-muted">{{Auth::user()->name}}</h2>
-                
+
+                <a class="btn btn-sm btn-outline-secondary" href="/posts/create" type='submit'>Create Post</a>
                 <a class="btn btn-sm btn-outline-secondary" href="/logout" type='submit'>Logout</a>
                 @else
                 
@@ -28,13 +29,3 @@
                 </div>
             </div>
         </header>
-
-        <div class="nav-scroller py-1 mb-2">
-            <nav class="nav d-flex justify-content-between">
-                <a class="p-2 text-muted" href="#">World</a>
-                <a class="p-2 text-muted" href="#">U.S.</a>
-                <a class="p-2 text-muted" href="#">Science</a>
-                <a class="p-2 text-muted" href="#">Health</a>
-                
-            </nav>
-        </div>
