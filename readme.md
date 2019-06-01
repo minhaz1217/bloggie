@@ -29,7 +29,7 @@
 
 1. Blog main page
 
-   <img src="https://raw.githubusercontent.com/minhaz1217/bloggie/master/IMAGES/image6.PNG" width=700 height=500>
+   <img src="https://raw.githubusercontent.com/minhaz1217/bloggie/master/IMAGES/image6.png" width=700 height=500>
 
 2. Signup Page
 
