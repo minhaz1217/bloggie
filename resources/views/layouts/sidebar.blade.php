@@ -41,7 +41,7 @@
                     <h4 class="font-italic">Where to find me</h4>
                     <ol class="list-unstyled">
                         <li><a href="https://github.com/minhaz1217">GitHub</a></li>
-                        <li><a href="facebook.com/minhazul.hayatkhan">Facebook</a></li>
+                        <li><a href="https://facebook.com/minhazul.hayatkhan">Facebook</a></li>
                     </ol>
                 </div>
             </aside><!-- /.blog-sidebar -->
