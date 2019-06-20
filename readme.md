@@ -21,9 +21,11 @@
 3. Open up the command prompt/terminal
 4. Clone the repo with `git clone https://github.com/minhaz1217/bloggie.git`
 5. Now cd into the project with `cd bloggie`
-6. Run `composer install`
-7. Run `php artisan migrate`
-8. Run `php artisan serve`
+6. Rename the `.env.example` file to `.env` using `copy .env.example .env` for windows
+7. Run `composer install`
+8. Run `php artisan migrate`
+9. Run `php artisan key:generate`
+10. Run `php artisan serve`
 
 ### Screen Shots
 
